@@ -23,15 +23,83 @@
         </nav>
 
         <div class="main_content">
-        <ul class="breadcrumb">
+            <ul class="breadcrumb">
                 <li><a href="index.php">Trang chủ</a></li>
                 <li>Thêm giáo viên</li>
             </ul>
-        </div>
 
-        
+            <h2>Thêm giáo viên</h2>
+            <form action="" method="get" class="container">
+            
+                <div>
+                    <label class="teacher name">Họ và tên:</label>
+                    <input type="text" name="name" id="name">
+                </div>
+
+                <div>
+                    <label class="teacher gender">Giới tính:</label>
+                    <select name="gender" id="gender">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="teacher dob">Ngày sinh:</label>
+                    <input type="date" name="dob" id="dob">
+                </div>
+
+                <div>
+                    <label class="teacher address">Địa chỉ:</label>
+                    <input type="text" name="address" id="address">
+                </div>
+
+                <div>
+                    <label class="teacher email">Email:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <div>
+                    <label class="teacher grade">Khối:</label>
+                    <input type="text" name="grade" id="grade">
+                </div>
+                
+                <div>
+                    <label class="teacher class">Lớp:</label>
+                    <input type="text" name="class" id="class">
+                </div>
+
+                <div>
+                    <label class="teacher phonenumber">Số điện thoại:</label>
+                    <input type="text" name="phonenumber" id="phonenumber">
+                </div>
+
+                <div>
+                    <label class="teacher username">Tên tài khoản</label>
+                    <input type="text" name="username" id="username">
+                </div>
+
+                <div>
+                    <label class="teacher password">Mật khẩu</label>
+                    <input type="text" name="password" id="password">
+                </div>
+
+                <div>
+
+                </div>
+
+                <div></div>
+
+                <div class = "submission">
+                    <input type="submit" onclick="javascript:Accept();" value="Chấp nhận">
+                    <input type="button" onclick="javascript:Deny();" value="Bỏ qua">
+                </div>
+            </form>
+        </div>
     </section>
 
+
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         let sidebar = document.querySelector('.navbar')
@@ -63,6 +131,12 @@
                 $('nav ul .student_item').slideToggle();
                 $('nav ul .third').toggleClass("rotate")
                 console.log('a')
+            });
+
+            $("submit").click(function () { 
+                fullname = $("#name");
+
+                
             });
 
         });
