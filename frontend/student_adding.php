@@ -30,7 +30,7 @@
             </ul>
 
             <h2>Thêm học sinh</h2>
-            <form action="" method="get" class="container">
+            <form action="" method="POST" class="container">
             
             <div>
                 <label class="student name">Họ và tên:</label>
