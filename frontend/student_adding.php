@@ -28,6 +28,79 @@
                 <li><a href="index.php">Trang chủ</a></li>
                 <li>Thêm học sinh</li>
             </ul>
+
+            <h2>Thêm học sinh</h2>
+            <form action="" method="get" class="container">
+            
+            <div>
+                <label class="student name">Họ và tên:</label>
+                <input type="text" name="name" id="name">
+            </div>
+
+            <div class = "fix">
+                <label class="student gender">Giới tính:</label>
+                <select name="gender" id="gender">
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+               
+            </div>
+            
+            <div>
+                <label class="student dob">Ngày sinh:</label>
+                <input type="date" name="dob" id="dob">
+            </div>
+
+            <div>
+                <label class="student father">Họ và tên bố:</label>
+                <input type="text" name="father" id="father">
+            </div>
+
+            <div>
+                <label class="student mother">Họ và tên mẹ:</label>
+                <input type="text" name="mother" id="mother">
+            </div>
+
+            <div>
+                <label class="student address">Địa chỉ:</label>
+                <input type="text" name="address" id="address">
+            </div>
+
+            <div>
+                <label class="student email">Email:</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div>
+                <label class="student grade">Khối:</label>
+                <input type="text" name="grade" id="grade">
+            </div>
+            
+            <div>
+                <label class="student class">Lớp:</label>
+                <input type="text" name="class" id="class">
+            </div>
+
+            <div>
+                <label class="student phonenumber">Số điện thoại:</label>
+                <input type="text" name="phonenumber" id="phonenumber">
+            </div>
+
+            <div>
+                <label class="student username">Tên tài khoản</label>
+                <input type="text" name="username" id="username">
+            </div>
+
+            <div>
+                <label class="student password">Mật khẩu</label>
+                <input type="text" name="password" id="password">
+            </div>
+
+            <div class = "submission">
+                <input type="submit" onclick="javascript:Accept();" value="Chấp nhận">
+                <input type="button" onclick="javascript:Deny();" value="Bỏ qua">
+            </div>
+        </form>
         </div>
     </section>
 
