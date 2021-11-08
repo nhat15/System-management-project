@@ -29,7 +29,7 @@
             </ul>
 
             <h2>Thêm giáo viên</h2>
-            <form action="" method="get" class="container">
+            <form action="" method="POST" class="container">
             
                 <div>
                     <label class="teacher name">Họ và tên:</label>
