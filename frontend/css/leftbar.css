@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0px;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: #182444;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.navbar.active {
+    width: 1px;
+}
+
+.navbar .text {
+    font-size: 28px;
+    line-height: 65px;
+    text-align: center;
+    color: white;
+}
+
+nav ul {
+    min-width: 1px;
+    list-style: none;
+    height: 100%;
+    width: 100%;
+}
+
+nav ul li {
+    text-decoration: none;
+    line-height: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    padding-left: 15px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-left: 3px solid transparent;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: rgb(141, 134, 134);
+    background-color: #182444;
+    /* border-left-color: cyan; */
+}
+
+nav ul ul {
+    position: static;
+    display: none;
+    
+}
+
+
+ul ul li {
+    line-height: 45px;
+    border-bottom: none;
+}
+
+
+ul ul li a {
+    font-size: 15px;
+    padding-left: 35px;
+}
+
+ul li a span {
+    position: absolute;
+    top: 40%;
+    right: 20px;
+    transform: translateY(-50%);
+    transition: 0.5s;
+    font-size: 25px;
+}
+
+ul li a span.rotate {
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+.home_section {
+    position: relative;
+    background-color: #f5f5f5;
+    width: calc(100% - 250px);
+    left: 250px;
+    transition: all 0.5s ease;
+    color: black;
+}
+
+.navbar.active ~ .home_section {
+    left: 1px;
+    width: calc(100% - 1px);
+}
+
+.home_section nav {
+    position: fixed;
+    width: calc(100% - 250px);
+    left: 250px;
+    height: 80px;
+    background-color: #fff;
+    left: 250px;
+    font-size: 30px;
+    padding: 20px 20px;
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+
+.navbar.active ~ .home_section nav {
+    left: 1px;
+    width: calc(100% - 1px);
+}
+
+.home_section .sidebar .menu{
+    width: 40px;
+    height: 40px;
+    background-color: #182444;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 5px;
+}
+
+.home_section .sidebar .header {
+    font-size: 40px;
+    font-weight: 600;
+    color: #182444;
+}
+
+.home_section .profile {
+    position: relative;
+    display: inline-block;
+}
+
+.home_section .user_profile {
+    font-size: 25px;
+    width: auto;
+    height: 50px;
+    right: 20px;
+    border: 1px solid transparent;
+    /* border-radius: 10px; */
+    background-color: #04AA6D;
+    padding: 2px 5px 2px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    margin-bottom: 1px;
+}
+
+
+.home_section .user_profile .user_img {
+    padding-right: 5px;
+    font-size: 35px;
+}
+
+.home_section .user_profile .user_name {
+    padding-right: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}
+
+.home_section .user_profile .user_icon {
+    font-size: 15px;
+}
+
+.home_section .profile .user_profile_item {
+    display: none;
+    list-style: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.home_section .profile .user_profile_item a {
+    width: 254.514px;
+    height: 50px;
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+    display: block;
+    border-left-color: transparent;
+}
+.home_section .profile .user_profile_item a:hover {
+    background-color: #f9f9f9;
+}
+
+.user_profile_item:hover {
+    background-color: #fff;
+}

@@ -1,0 +1,36 @@
+.home_section .main_content {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+.home_section .main_content ul.breadcrumb {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    list-style: none;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: #fea801;
+    content: ">\00a0";
+  }
+  ul.breadcrumb li a {
+    color: #646464;
+    text-decoration: none;
+  }
+
+  ul.breadcrumb li a:hover {
+    color: #fea801;
+  }
+
+  ul.breadcrumb li {
+      color: #fea801;
+  }
