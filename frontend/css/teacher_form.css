@@ -1,0 +1,148 @@
+.home_section .main_content {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    line-height: 60px;
+    height: 100%;
+}
+
+.home_section .main_content ul.breadcrumb {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    list-style: none;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: #fea801;
+    content: ">\00a0";
+  }
+  ul.breadcrumb li a {
+    color: #646464;
+    text-decoration: none;
+  }
+
+  ul.breadcrumb li a:hover {
+    color: #fea801;
+  }
+
+  ul.breadcrumb li {
+      color: #fea801;
+  }
+
+
+  .container {
+      display: grid;
+      border: 1px solid transparent;
+      background-color: white;
+      grid-template-columns: 25% 25% 25% 25%;
+      padding-left: 20px;
+      padding-bottom: 20px;
+  }
+
+  .container div {
+      display: flex;
+      flex-direction: column;
+  }
+
+  h2 {
+
+      font-size: 40px;
+      font-weight: 600;
+  }
+
+.container label {
+    float: left;
+    width: 300px;
+}
+
+.container label.radio-btn {
+    float: left;
+    margin-left: 0px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.container h2 {
+    margin-top: 30px;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.container .student {
+    font-size: 25px;
+    font-weight: 600;
+    color: #646464;
+}
+
+input[type=text], input[type=email], input[type=password], input[type=date], select {
+    border: 1px solid rgb(173, 173, 173);
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+    padding-left: 10px;
+    outline: none;
+    font-size: 18px;
+}
+
+
+input[type=date] {
+    cursor: pointer;
+}
+
+select {
+    cursor: pointer;
+}
+
+input[type=text]:hover, input[type=email]:hover, input[type=date]:hover, select:hover {
+    background-color: #eeeeee;
+}
+
+div.submission {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+  }
+  
+  input[type=submit] {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 2px;
+    border: none;
+    background-color: #ffae01;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100px;
+    height: 60px;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #042954;
+  } 
+  
+  input[type=button] {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 2px;
+    border: none;
+    background-color: #042954;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    width: 100px;
+    height: 60px;
+  }
+  
+  input[type=button]:hover {
+    background-color: #ffae01;
+  }
