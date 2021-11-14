@@ -34,3 +34,58 @@ ul.breadcrumb li {
   ul.breadcrumb li {
       color: #fea801;
   }
+
+  h2 {
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  .main_content .teacherDetail {
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .main_content .teacherDetail img {
+    width: 300px;
+    height: 350px;
+  }
+
+  .main_content .teacherDetail table {
+    width: 70%;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 30px;
+    line-height: 80px;
+  }
+
+  .teacherDetail .edit {
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid transparent;
+    background-color: rgb(214, 214, 214);
+}
+
+.teacherDetail .edit i {
+    font-size: 20px;
+    padding: 10px;
+    color: #646464;
+}
+
+.teacherDetail .edit i:hover {
+    color: white;
+    background-color: #fd7e14;
+}
+
+td:nth-child(1) {
+    color: #646464;
+}
+
+TD:nth-child(2) {
+    font-weight: 530;
+}
