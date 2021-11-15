@@ -1,3 +1,40 @@
+<?php
+    require_once '../database/config.php'
+?>
+
+<?php
+    $error = array();
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST['name'];
+        $ID = $_POST['ID'];
+        $email = $_POST['email'];
+        $password = md5($_POST['password']);
+        if (empty($name)) {
+            $error[name] = 'Bạn chưa nhập tên';
+        } 
+        if (empty($email)) {
+            $error[email] = 'Bạn chưa nhập email';
+        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error['email'] = 'Bạn đã nhập sai định dạng email. Vui lòng nhập lại.';
+        }
+        if (empty($password)) {
+            $error[password] = 'Bạn chưa nhập mật khẩu';
+        } 
+
+        if (!$error) {
+            $sql = "INSERT INTO teacher (Name, ID, Email) values ('$name', '$ID', '$email')";
+            $sql2 = "INSERT INTO teacher_account (user_name, password, ID) values ('$email', '$password', '$ID')";
+            if ($qr = mysqli_query($link, $sql) && $qr2 = mysqli_query($link, $sql2)) {
+                echo '<script type="text/javascript">';
+                echo ' alert("Cập nhật thành công!")';  //not showing an alert box.
+                echo '</script>';
+                header('location: teacher.php');
+                exit();
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
