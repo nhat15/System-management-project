@@ -27,48 +27,44 @@
                 <li><a href="index.php">Trang chủ</a></li>
                 <li>Thông tin giáo viên</li>
             </ul>
-        </div>
 
-        <!-- <div class="teacherDetail">
-            <img src="../../image/teacher1.jpg" alt="">
-            <div class="teacherInfo">About me -->
-                <!-- <div class="description">
-                    abcdefjhijklmnopqrs
-                </div>
-                <div class="Info fullName">
-                    <label class="teacher">Họ và tên:</label> 
-                    <span class="hovaten">Nguyễn Quốc Nhật</span>
-                </div>
-                <div class="Info gender">
-                    <label class="teacher">Giới tính:</label> 
-                    <span class="gioitinh">Nam</span>
-                </div>
-                <div class="Info dateOfBirth">
-                    <label class="teacher">Ngày sinh:</label> 
-                    <span class="ngaysinh">15/03/2001</span>
-                </div>
-                <div class="Info nationality">
-                    <label class="teacher">Quốc tịch:</label> 
-                    <span class="quoctich">Việt Nam</span>
-                </div>
-                <div class="Info email">
-                    <label class="teacher">Email:</label> 
-                    <span class="emailadd">quocnhat1503@gmail.com</span>
-                </div>
-                <div class="Info subject">
-                    <label class="teacher">Môn học:</label> 
-                    <span class="monhoc">Tiếng Anh</span>
-                </div>
-
-                <div class="Info contactNumber">    
-                    <label class="teacher">Số điện thoại:</label> 
-                    <span class="sdt">0983419519</span>
-                </div> -->
+            <h2>About me</h2>
+            <div class="teacherDetail">
+                <img src="https://phunugioi.com/wp-content/uploads/2020/10/hinh-avatar-trang-chat-ngau-cute.jpg" alt="Đây là ảnh">
+                <table>
+                    <tr>
+                        <td>Họ và tên:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Giới tính:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Ngày sinh:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Địa chỉ:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Số điện thoại:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Môn học:</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="edit">
+                    <a href="teacherForm.php"><i class="far fa-edit"></i></a> 
+                </div>   
             </div>
-
-            <!-- <div class="edit">
-                <a href="teacherForm.php"><i class="far fa-edit"></i></a> 
-            </div>         -->
         </div>
     </section>
 
