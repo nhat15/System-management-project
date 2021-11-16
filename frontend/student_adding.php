@@ -1,3 +1,45 @@
+<?php
+    require_once '../database/config.php'
+?>
+
+<?php
+     $error = array();
+     if($_SERVER["REQUEST_METHOD"] == "POST") {
+         $name = $_POST['name'];
+         $ID = $_POST['ID'];
+         $email = $_POST['email'];
+         $password = md5($_POST['password']);
+
+         if (empty($name)) {
+             $error['name'] = 'Bạn chưa nhập tên';
+         } 
+         if (empty($ID)) {
+             $error['ID'] = 'Bạn chưa nhập ID';
+         } elseif (!is_numeric($ID)){
+            $error['ID'] = 'Bạn nhập sai định dạng ID';
+         }
+         if (empty($email)) {
+             $error['email'] = 'Bạn chưa nhập email';
+         } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+             $error['email'] = 'Bạn đã nhập sai định dạng email. Vui lòng nhập lại.';
+         }
+         if (empty($password)) {
+             $error['password'] = 'Bạn chưa nhập mật khẩu';
+         }
+ 
+         if (!$error) {
+             $sql = "INSERT INTO student (Name, ID, Email) values ('$name', '$ID', '$email')";
+             $sql2 = "INSERT INTO student_account (user_name, password, ID) values ('$email', '$password', '$ID')";
+             if ($qr = mysqli_query($link, $sql2) && $qr2 = mysqli_query($link, $sql)) {
+                 header('location: student.php');
+                 exit();
+             } 
+         } else {
+            header('location: student_adding.php');
+         }
+     }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +63,6 @@
                 include("header.php")
             ?>
         </nav>
-        
 
         <div class="main_content">
             <ul class="breadcrumb">
@@ -30,77 +71,36 @@
             </ul>
 
             <h2>Thêm học sinh</h2>
-            <form action="" method="POST" class="container">
-            
-            <div>
-                <label class="student name">Họ và tên:</label>
-                <input type="text" name="name" id="name">
-            </div>
+            <form action="" method="POST" class="container" id="student">
+                <div>
+                    <label class="student name">Họ và tên:</label>
+                    <input type="text" name="name" id="name">
+                </div>
 
-            <div class = "fix">
-                <label class="student gender">Giới tính:</label>
-                <select name="gender" id="gender">
-                    <option value="Nam">Nam</option>
-                    <option value="Nữ">Nữ</option>
-                </select>
-               
-            </div>
-            
-            <div>
-                <label class="student dob">Ngày sinh:</label>
-                <input type="date" name="dob" id="dob">
-            </div>
+                <div>
+                    <label class="student ID">Mã học sinh:</label>
+                    <input type="text" name="ID" id="ID">
+                    
+                </div>
+                
+                <div>
+                    <label class="student email">Email:</label>
+                    <input type="email" name="email" id="email">
+                </div>
 
-            <div>
-                <label class="student father">Họ và tên bố:</label>
-                <input type="text" name="father" id="father">
-            </div>
+                <div>
+                    <label class="student password">Mật khẩu</label>
+                    <input type="password" name="password" id="password">
+                </div>
 
-            <div>
-                <label class="student mother">Họ và tên mẹ:</label>
-                <input type="text" name="mother" id="mother">
-            </div>
-
-            <div>
-                <label class="student address">Địa chỉ:</label>
-                <input type="text" name="address" id="address">
-            </div>
-
-            <div>
-                <label class="student email">Email:</label>
-                <input type="email" name="email" id="email">
-            </div>
-
-            <div>
-                <label class="student grade">Khối:</label>
-                <input type="text" name="grade" id="grade">
-            </div>
-            
-            <div>
-                <label class="student class">Lớp:</label>
-                <input type="text" name="class" id="class">
-            </div>
-
-            <div>
-                <label class="student phonenumber">Số điện thoại:</label>
-                <input type="text" name="phonenumber" id="phonenumber">
-            </div>
-
-            <div>
-                <label class="student username">Tên tài khoản</label>
-                <input type="text" name="username" id="username">
-            </div>
-
-            <div>
-                <label class="student password">Mật khẩu</label>
-                <input type="text" name="password" id="password">
-            </div>
-
-            <div class = "submission">
-                <input type="submit" onclick="javascript:Accept();" value="Chấp nhận">
-                <input type="button" onclick="javascript:Deny();" value="Bỏ qua">
-            </div>
-        </form>
+                <div class = "submission">
+                    <input type="submit" value="Chấp nhận">
+                    <input type="button" class="deny" value="Bỏ qua">
+                </div>
+            </form>
+            <?php
+                mysqli_close($link);
+            ?>
         </div>
     </section>
 
@@ -135,6 +135,10 @@
                 $('nav ul .student_item').slideToggle();
                 $('nav ul .third').toggleClass("rotate")
                 console.log('a')
+            });
+
+            $(".deny").click(function () { 
+                $("#student").trigger("reset");
             });
 
         });
