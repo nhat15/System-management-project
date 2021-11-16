@@ -10,15 +10,19 @@
         $email = $_POST['email'];
         $password = md5($_POST['password']);
         if (empty($name)) {
-            $error[name] = 'Bạn chưa nhập tên';
+            $error['name'] = 'Bạn chưa nhập tên';
         } 
+        if (empty($ID)) {
+            $error['id'] = 'Bạn chưa nhập ID';
+        }
+        
         if (empty($email)) {
-            $error[email] = 'Bạn chưa nhập email';
+            $error['email'] = 'Bạn chưa nhập email';
         } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $error['email'] = 'Bạn đã nhập sai định dạng email. Vui lòng nhập lại.';
         }
         if (empty($password)) {
-            $error[password] = 'Bạn chưa nhập mật khẩu';
+            $error['password'] = 'Bạn chưa nhập mật khẩu';
         } 
 
         if (!$error) {
@@ -30,6 +34,8 @@
                 echo '</script>';
                 header('location: teacher.php');
                 exit();
+            } else {
+                header('location: teacher_adding.php');
             }
         }
     }
@@ -66,29 +72,17 @@
             </ul>
 
             <h2>Thêm giáo viên</h2>
-            <form action="" method="POST" class="container">
+            <form action="" method="POST" class="container" id="teacher">
             
                 <div>
                     <label class="teacher name">Họ và tên:</label>
                     <input type="text" name="name" id="name">
+                    
                 </div>
 
                 <div>
-                    <label class="teacher gender">Giới tính:</label>
-                    <select name="gender" id="gender">
-                        <option value="Nam">Nam</option>
-                        <option value="Nữ">Nữ</option>
-                    </select>
-                </div>
-                
-                <div>
-                    <label class="teacher dob">Ngày sinh:</label>
-                    <input type="date" name="dob" id="dob">
-                </div>
-
-                <div>
-                    <label class="teacher address">Địa chỉ:</label>
-                    <input type="text" name="address" id="address">
+                    <label class="teacher ID">Mã giáo viên:</label>
+                    <input type="text" name="ID" id="ID">
                 </div>
 
                 <div>
@@ -97,39 +91,14 @@
                 </div>
 
                 <div>
-                    <label class="teacher grade">Khối:</label>
-                    <input type="text" name="grade" id="grade">
-                </div>
-                
-                <div>
-                    <label class="teacher class">Lớp:</label>
-                    <input type="text" name="class" id="class">
+                    <label class="teacher password">Mật khẩu:</label>
+                    <input type="password" name="password" id="password">
                 </div>
 
-                <div>
-                    <label class="teacher phonenumber">Số điện thoại:</label>
-                    <input type="text" name="phonenumber" id="phonenumber">
-                </div>
-
-                <div>
-                    <label class="teacher username">Tên tài khoản</label>
-                    <input type="text" name="username" id="username">
-                </div>
-
-                <div>
-                    <label class="teacher password">Mật khẩu</label>
-                    <input type="text" name="password" id="password">
-                </div>
-
-                <div>
-
-                </div>
-
-                <div></div>
 
                 <div class = "submission">
-                    <input type="submit" onclick="javascript:Accept();" value="Chấp nhận">
-                    <input type="button" onclick="javascript:Deny();" value="Bỏ qua">
+                    <input type="submit" value="Chấp nhận">
+                    <input type="button" class="Deny" value="Bỏ qua">
                 </div>
             </form>
         </div>
@@ -148,32 +117,26 @@
 
             $(".profile").click(function () { 
                 $(".user_profile_item").slideToggle();
-            
             });
 
             $(".subject").click(function () { 
                 $('nav ul .sub_item').slideToggle();
                 $('nav ul .first').toggleClass("rotate")
-                // console.log('a')
             });
 
             $(".teacher").click(function () { 
                 $('nav ul .teacher_item').slideToggle();
                 $('nav ul .second').toggleClass("rotate")
-                // console.log('a')
 
             });
 
             $(".student").click(function () { 
                 $('nav ul .student_item').slideToggle();
                 $('nav ul .third').toggleClass("rotate")
-                console.log('a')
             });
 
-            $("submit").click(function () { 
-                fullname = $("#name");
-
-                
+            $(".Deny").click(function () {
+                $("#teacher").trigger("reset");
             });
 
         });
