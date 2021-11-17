@@ -1,3 +1,8 @@
+<?php
+    require_once '../database/config.php';
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +32,46 @@
                 <li><a href="index.php">Trang chủ</a></li>
                 <li>Kết quả học tập</li>
             </ul>
+            
+            <h2>Kết quả học tập</h2>
+            <div class="result">
+                <table width='100%'>
+                    <thead>
+                        <tr>
+                            <th>Môn học</th>
+                            <th>Điểm kiểm tra miệng</th>
+                            <th>Điểm kiểm tra 15 phút</th>
+                            <th>Điểm kiểm tra 1 tiết<br>(lần 1)</th>
+                            <th>Điểm kiểm tra 1 tiết<br>(lần 2)</th>
+                            <th>Điểm kiểm tra cuối kỳ</th>
+                            <th>Điểm tổng kết môn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            // $sql = "SELECT * FROM score_sheet WHERE";
+                            // $result = mysqli_query($link, $sql);
+                            // while ($rows = mysqli_fetch_array($result)) {
+                        ?>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <?php
+                            // }
+                        ?>
+                    </tbody>
+                </table>
+                <div class="final">
+                    <p> Điểm tổng kết học kỳ:</p>
+                    <p>Thứ hạng trung bình toàn lớp: </p>
+                </div>
+            </div>
         </div>
 
     </section>
